@@ -4,6 +4,6 @@ import pradist.tutorials.springboot.model.Bank
 
 interface BankDataSource {
 
-    fun getBanks(): Collection<Bank>
+    fun retrieveBanks(): Collection<Bank>
 
 }
