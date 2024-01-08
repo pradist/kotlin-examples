@@ -11,5 +11,5 @@ import pradist.tutorials.springboot.service.BankService
 class BankController(private val service: BankService) {
 
     @GetMapping
-    fun getBanks(): String = "Working!"
+    fun getBanks(): Collection<Bank> = service.getBanks()
 }
