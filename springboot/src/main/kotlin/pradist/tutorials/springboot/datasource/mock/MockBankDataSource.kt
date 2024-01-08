@@ -8,6 +8,8 @@ import pradist.tutorials.springboot.model.Bank
 class MockBankDataSource: BankDataSource {
 
     override fun retrieveBanks(): Collection<Bank> {
-        return listOf(Bank("12345", 3.14, 16))
+        return listOf(Bank("12345", 3.14, 16),
+            Bank("101010", 17.0, 0),
+            Bank("54321", 0.0, 100))
     }
 }
