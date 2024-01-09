@@ -1,0 +1,7 @@
+### GET all banks
+GET http://localhost:9000/api/banks
+Accept: application/json
+
+### GET bank by account number
+GET http://localhost:9000/api/banks/1234
+Accept: application/json
