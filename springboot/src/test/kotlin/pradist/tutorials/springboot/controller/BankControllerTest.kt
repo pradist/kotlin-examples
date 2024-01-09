@@ -38,6 +38,9 @@ class BankControllerTest() {
             .andDo { print() }
             .andExpect {
                 status { isOk() }
+                content { contentType(MediaType.APPLICATION_JSON) }
+                jsonPath("$.trust") { value("3.14") }
+                jsonPath("$.transactionFee") { value("16") }
             }
     }
 }
