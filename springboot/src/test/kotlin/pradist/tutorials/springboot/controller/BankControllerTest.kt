@@ -19,6 +19,8 @@ class BankControllerTest() {
     @Autowired
     lateinit var mockMvc: MockMvc
 
+    val baseUrl = "/api/banks"
+
     @Nested
     @DisplayName("getBanks()")
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -27,7 +29,7 @@ class BankControllerTest() {
         @Test
         fun `should return all banks`() {
             // when/then
-            mockMvc.get("/api/banks")
+            mockMvc.get(baseUrl)
                 .andDo { print() }
                 .andExpect {
                     status { isOk() }
@@ -47,7 +49,7 @@ class BankControllerTest() {
             val accountNumber = 12345
 
             // when/then
-            mockMvc.get("/api/banks/$accountNumber")
+            mockMvc.get("$baseUrl/$accountNumber")
                 .andDo { print() }
                 .andExpect {
                     status { isOk() }
@@ -57,5 +59,4 @@ class BankControllerTest() {
                 }
         }
     }
-
 }
