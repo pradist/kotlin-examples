@@ -58,5 +58,16 @@ class BankControllerTest() {
                     jsonPath("$.transactionFee") { value("16") }
                 }
         }
+
+        @Test
+        fun `should return NOT FOUND if the account number does not exist`() {
+            // given
+            val accountNumber = "does_not_exist"
+
+            // when/then
+            mockMvc.get("$baseUrl/$accountNumber")
+                .andDo { print() }
+                .andExpect { status { isNotFound() } }
+        }
     }
 }
