@@ -5,3 +5,7 @@ Accept: application/json
 ### GET bank by account number
 GET http://localhost:9000/api/banks/1234
 Accept: application/json
+
+### GET bank by account number not found
+GET http://localhost:9000/api/banks/0000
+Accept: application/json
